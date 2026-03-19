@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { APP } from '@/constants/app'
 
 const faqs: { q: string; a: string }[] = [
   {
@@ -60,7 +61,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Will feature X be implemented?',
-    a: 'Feature requests are tracked on GitHub Issues. Search the existing issues before opening a new one — if the feature is already requested, add a thumbs-up reaction to help prioritize it. The most popular requests are more likely to be implemented.',
+    a: `Feature requests are tracked on GitHub Issues. Search the existing issues before opening a new one — if the feature is already requested, add a thumbs-up reaction to help prioritize it. The most popular requests are more likely to be implemented.`,
   },
   {
     q: 'How many accounts can I have?',
@@ -68,7 +69,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'How do I contact the maintainer?',
-    a: 'You can reach the developer by email at flow@gege.mn, through the GitHub repository, or by joining the Discord server. Response times may vary but all messages are read.',
+    a: `You can reach the developer by email at ${APP.contact.email} or through the GitHub repository. Response times may vary but all messages are read.`,
   },
 ]
 

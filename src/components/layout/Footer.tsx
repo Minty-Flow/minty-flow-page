@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Separator } from '@/components/ui/separator'
+import { APP } from '@/constants/app'
 
 export function Footer() {
   return (
@@ -7,9 +8,9 @@ export function Footer() {
       <div className="mx-auto max-w-5xl px-4 py-10">
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-1">
-            <p className="font-semibold text-foreground">Minty Flow</p>
+            <p className="font-semibold text-foreground">{APP.name}</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Free, open-source expense tracker.
+              {APP.tagline}
             </p>
           </div>
 
@@ -18,7 +19,7 @@ export function Footer() {
             <ul className="mt-2 flex flex-col gap-1.5">
               <li>
                 <a
-                  href="https://play.google.com"
+                  href={APP.links.googlePlay}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground"
@@ -28,7 +29,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/flow-mn/minty-flow/releases"
+                  href={APP.links.githubReleases}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground"
@@ -47,7 +48,7 @@ export function Footer() {
             <ul className="mt-2 flex flex-col gap-1.5">
               <li>
                 <a
-                  href="https://github.com/flow-mn"
+                  href={APP.links.githubOrg}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-foreground"
@@ -84,7 +85,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <p className="text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Minty Flow. Free and open source.
+          © {new Date().getFullYear()} {APP.name}. Free and open source.
         </p>
       </div>
     </footer>

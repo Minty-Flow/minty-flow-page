@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import icon from '@/assets/icon.png'
+import { APP } from '@/constants/app'
 
 const features = [
   {
@@ -42,7 +43,7 @@ function DownloadButtons() {
     <div className="flex flex-wrap items-center justify-center gap-3">
       <Button asChild size="lg" className="rounded-full">
         <a
-          href="https://play.google.com"
+          href={APP.links.googlePlay}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -52,7 +53,7 @@ function DownloadButtons() {
 
       <Button asChild size="lg" variant="outline" className="rounded-full">
         <a
-          href="https://github.com/flow-mn/minty-flow/releases"
+          href={APP.links.githubReleases}
           target="_blank"
           rel="noopener noreferrer"
         >

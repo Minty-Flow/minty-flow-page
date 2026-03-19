@@ -1,4 +1,5 @@
 import { Separator } from '@/components/ui/separator'
+import { APP } from '@/constants/app'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -121,10 +122,10 @@ export function PrivacyPolicy() {
           </p>
           <p>
             <a
-              href="mailto:flow@gege.mn"
+              href={`mailto:${APP.contact.email}`}
               className="text-primary underline-offset-4 hover:underline"
             >
-              flow@gege.mn
+              {APP.contact.email}
             </a>
           </p>
         </Section>

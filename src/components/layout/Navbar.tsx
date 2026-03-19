@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { useTheme } from '@/contexts/theme'
 import icon from '@/assets/icon.png'
+import { APP } from '@/constants/app'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -19,8 +20,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <img src={icon} alt="Minty Flow" className="size-8 rounded-xl" />
-          <span className="text-lg font-semibold text-foreground">Minty Flow</span>
+          <img src={icon} alt={APP.name} className="size-8 rounded-xl" />
+          <span className="text-lg font-semibold text-foreground">{APP.name}</span>
         </Link>
 
         <div className="flex items-center gap-1">
