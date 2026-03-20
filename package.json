@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "pnpm build && gh-pages -d dist -b pages-deployment"
+    "deploy": "pnpm build && cp dist/index.html dist/privacy.html && cp dist/index.html dist/faq.html && gh-pages -d dist -b pages-deployment"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
