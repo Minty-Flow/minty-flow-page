@@ -9,7 +9,7 @@ import { PrivacyPolicy } from '@/pages/PrivacyPolicy'
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="flex min-h-svh flex-col">
           <Navbar />
           <div className="flex-1">

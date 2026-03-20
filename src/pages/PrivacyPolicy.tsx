@@ -19,62 +19,73 @@ export function PrivacyPolicy() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
           Privacy Policy
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Last updated: March 2026
-        </p>
+        <p className="mt-2 text-sm text-muted-foreground">Effective Date: May 17, 2025</p>
       </div>
 
       <div className="flex flex-col gap-8">
-        <Section title="Overview">
+        <Section title="Introduction">
           <p>
-            Minty Flow is designed with privacy as a core principle. We do not
-            collect, store, or transmit your personal financial data. All data
-            you enter into the app stays on your device under your control.
-          </p>
-          <p>
-            This Privacy Policy explains what (minimal) information we may
-            encounter and how we handle it.
+            This Privacy Policy describes how Flow, a personal finance app developed by Batmend
+            Ganbaatar ("we", "us", or "our"), handles your information. We built Flow with your
+            privacy in mind — your data belongs to you.
           </p>
         </Section>
 
         <Separator />
 
-        <Section title="Data We Do Not Collect">
-          <p>Minty Flow does not collect or store:</p>
-          <ul className="ml-4 list-disc space-y-1">
-            <li>Your financial transactions, accounts, or balances</li>
-            <li>Your name, email address, or any personal identifiers</li>
-            <li>Device identifiers or advertising IDs</li>
-            <li>Location data</li>
-            <li>Usage analytics or behavioral data sent to our servers</li>
-          </ul>
-        </Section>
-
-        <Separator />
-
-        <Section title="Local Storage">
+        <Section title="Information We Collect">
           <p>
-            All app data — your accounts, transactions, categories, and
-            settings — is stored locally on your device using on-device
-            databases (SQLite / Core Data). This data never leaves your device
-            unless you explicitly export it or enable iCloud sync.
+            Flow does not collect, transmit, or store any personal information on our servers. All
+            your data — including preferences, settings, and saved content — lives entirely on your
+            device and is never accessible to us.
+          </p>
+          <p>
+            That said, the app does make secure HTTPS requests to external services (for example, to
+            fetch live exchange rates or load contributor information). These requests may expose
+            some technical metadata — such as your device's IP address or request headers — to those
+            third-party services.
           </p>
         </Section>
 
         <Separator />
 
+        <Section title="Use of Information">
+          <p>
+            Since we don't collect any personal information, we have no personal data to use for
+            analytics, advertising, or any other purpose. Plain and simple.
+          </p>
+        </Section>
+
         <Separator />
 
-        <Section title="Crash Reporting">
+        <Section title="Data Sharing">
           <p>
-            The app may collect anonymized crash reports to help us identify
-            and fix bugs. These reports do not contain any personal information
-            or financial data. They include technical details such as the
-            device model, OS version, and the stack trace at the point of
-            crash.
+            We do not share, sell, or hand over any personal data to third parties — and because we
+            don't collect your data in the first place, there is nothing to share.
           </p>
           <p>
-            You can opt out of crash reporting in app settings.
+            <span className="font-medium text-foreground">Note for Apple users:</span> If you use
+            Flow on macOS or iOS, your local app data may be included in iCloud backups. We have no
+            control over or access to iCloud data. Please review{' '}
+            <a
+              href="https://www.apple.com/legal/privacy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              Apple's Privacy Policy
+            </a>{' '}
+            for details.
+          </p>
+        </Section>
+
+        <Separator />
+
+        <Section title="Data Security">
+          <p>
+            We take reasonable precautions to help protect the information you store within Flow.
+            That said, no software can guarantee absolute security. You are responsible for keeping
+            your device secure and your data backed up.
           </p>
         </Section>
 
@@ -82,24 +93,15 @@ export function PrivacyPolicy() {
 
         <Section title="Third-Party Services">
           <p>
-            Minty Flow does not integrate third-party advertising networks,
-            social SDKs, or analytics platforms that would track you across
-            apps or websites.
+            Flow does not integrate any advertising networks, social media SDKs, or cross-app
+            tracking tools.
           </p>
           <p>
-            The optional exchange rate feature fetches publicly available
-            exchange rate data from a financial data API. No personal
-            information is included in these requests.
-          </p>
-        </Section>
-
-        <Separator />
-
-        <Section title="Children's Privacy">
-          <p>
-            Minty Flow does not knowingly collect any information from children
-            under the age of 13. The app does not collect personal information
-            from any user, regardless of age.
+            To power certain features — like live currency exchange rates or displaying project
+            contributors — Flow sends HTTPS requests to third-party APIs. These services may receive
+            technical metadata such as your IP address, OS type, or request headers. We don't
+            control how those services handle that data, so we encourage you to review their
+            respective privacy policies.
           </p>
         </Section>
 
@@ -107,9 +109,9 @@ export function PrivacyPolicy() {
 
         <Section title="Changes to This Policy">
           <p>
-            We may update this Privacy Policy from time to time. We will post
-            any changes on this page and update the "Last updated" date at the
-            top. We encourage you to review this page periodically.
+            We may revise this Privacy Policy occasionally. When we do, we'll update the effective
+            date at the top of this page. Continuing to use Flow after any changes means you accept
+            the updated policy. We recommend checking back periodically.
           </p>
         </Section>
 
@@ -117,8 +119,7 @@ export function PrivacyPolicy() {
 
         <Section title="Contact">
           <p>
-            If you have any questions or concerns about this Privacy Policy or
-            how Minty Flow handles data, please contact us at:
+            Have questions or concerns about this Privacy Policy? Reach out to us at:
           </p>
           <p>
             <a
