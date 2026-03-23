@@ -1,5 +1,6 @@
 import { Separator } from '@/components/ui/separator'
 import { APP } from '@/constants/app'
+import { useSEO } from '@/hooks/useSEO'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -13,6 +14,12 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 export function PrivacyPolicy() {
+  useSEO({
+    title: 'Privacy Policy — Minty Flow',
+    description: 'Minty Flow stores all your data locally on your device. We collect no personal information, use no analytics, and have no servers. Read our full privacy policy.',
+    canonical: 'https://flow-mn.github.io/minty-flow-page/privacy',
+  })
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 md:py-20">
       <div className="mb-10">

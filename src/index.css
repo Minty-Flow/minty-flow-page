@@ -143,4 +143,13 @@
     @apply bg-background text-foreground;
     margin: 0;
   }
+  h1, h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent;
+  }
 }

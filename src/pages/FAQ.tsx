@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {
   Accordion,
   AccordionContent,
@@ -5,6 +6,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { APP } from '@/constants/app'
+import { useSEO } from '@/hooks/useSEO'
 
 const faqs: { q: string; a: string }[] = [
   {
@@ -74,6 +76,30 @@ const faqs: { q: string; a: string }[] = [
 ]
 
 export function FAQ() {
+  useSEO({
+    title: 'FAQ — Minty Flow',
+    description: 'Answers to common questions about Minty Flow: how it works, privacy, multi-currency, recurring transactions, data export, and more.',
+    canonical: 'https://flow-mn.github.io/minty-flow-page/faq',
+  })
+
+  useEffect(() => {
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    }
+    const el = document.createElement('script')
+    el.type = 'application/ld+json'
+    el.id = 'faq-schema'
+    el.textContent = JSON.stringify(schema)
+    document.head.appendChild(el)
+    return () => { document.getElementById('faq-schema')?.remove() }
+  }, [])
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 md:py-20">
       <div className="mb-10 text-center">
