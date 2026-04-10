@@ -9,7 +9,7 @@ export const APP = {
     googlePlay:
       "https://play.google.com/store/apps/details?id=com.mintyflow.tracker",
     githubOrg: "https://github.com/Minty-Flow",
-    githubReleases: "https://github.com/Minty-Flow/minty-flow-page/releases",
-    githubIssues: "https://github.com/Minty-Flow/minty-flow/issues",
+    githubReleases: "https://github.com/Minty-Flow/minty-flow-app/releases",
+    githubIssues: "https://github.com/Minty-Flow/minty-flow-app/issues",
   },
 } as const;
