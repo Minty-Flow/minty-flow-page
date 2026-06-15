@@ -267,7 +267,7 @@ export function Changelog() {
 		title: "Changelog — Minty Flow",
 		description:
 			"See what's new in Minty Flow. Every feature release, improvement, and bug fix — documented with each version.",
-		canonical: "https://minty-flow.github.io/minty-flow-page/changelog",
+		canonical: "https://minty-flow.github.io/changelog",
 	});
 
 	useEffect(() => {

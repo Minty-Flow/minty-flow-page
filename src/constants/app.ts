@@ -1,7 +1,7 @@
 export const APP = {
 	name: "Minty Flow",
 	tagline: "Free, open-source expense tracker.",
-	siteUrl: "https://minty-flow.github.io/minty-flow-page",
+	siteUrl: "https://minty-flow.github.io",
 	contact: {
 		email: "adelefaell@gmail.com",
 	},

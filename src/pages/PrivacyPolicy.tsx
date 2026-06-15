@@ -132,7 +132,7 @@ export function PrivacyPolicy() {
 		title: "Privacy Policy — Minty Flow",
 		description:
 			"Minty Flow stores all your data locally on your device. We collect no personal information, use no analytics, and have no servers. Read our full privacy policy.",
-		canonical: "https://minty-flow.github.io/minty-flow-page/privacy",
+		canonical: "https://minty-flow.github.io/privacy",
 	});
 
 	return (

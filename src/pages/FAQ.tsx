@@ -164,7 +164,7 @@ export function FAQ() {
 		title: "FAQ — Minty Flow",
 		description:
 			"Answers to common questions about Minty Flow: how it works, privacy, multi-currency, recurring transactions, data export, and more.",
-		canonical: "https://minty-flow.github.io/minty-flow-page/faq",
+		canonical: "https://minty-flow.github.io/faq",
 	});
 
 	useEffect(() => {
