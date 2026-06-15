@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="4N_oRXOeUxvbqB1jzy40SBBk8C8LAg5ni046iLXvN2o" />
+
+    <!-- Primary Meta Tags -->
+    <title>Minty Flow — Free Expense Tracker, No Account Required</title>
+    <meta name="description" content="Minty Flow is a free, open-source expense tracker that works 100% offline. No account, no ads, no subscriptions. Track income, expenses, and budgets with 60+ themes on Android." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://minty-flow.github.io/minty-flow-page/" />
+    <meta property="og:title" content="Minty Flow — Free Expense Tracker, No Account Required" />
+    <meta property="og:description" content="Minty Flow is a free, open-source expense tracker that works 100% offline. No account, no ads, no subscriptions. Track income, expenses, and budgets with 60+ themes on Android." />
+    <meta property="og:image" content="%BASE_URL%icon.png" />
+    
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://minty-flow.github.io/minty-flow-page/" />
+    <meta property="twitter:title" content="Minty Flow — Free Expense Tracker, No Account Required" />
+    <meta property="twitter:description" content="Minty Flow is a free, open-source expense tracker that works 100% offline. No account, no ads, no subscriptions. Track income, expenses, and budgets with 60+ themes on Android." />
+    <meta property="twitter:image" content="%BASE_URL%icon.png" />
+
+
+    <meta name="image" property="og:image" content="%BASE_URL%icon.png">
+    <meta name="author" content="adelefaell">
+        
+    <!-- App / mobile meta -->
+    <meta name="application-name" content="Minty Flow" />
+    <meta name="theme-color" content="#007B17" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#C0FFCA" media="(prefers-color-scheme: dark)" />
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Minty Flow",
+      "description": "Minty Flow is a free, open-source, privacy-first expense tracker. Track income and expenses, manage budgets, and visualize your spending — all stored locally on your device with no account required.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Android",
+      "url": "https://minty-flow.github.io/minty-flow-page/",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=mn.gege.flow",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "100% free with no premium tier",
+        "No account or internet connection required",
+        "All data stored locally on device",
+        "60+ built-in themes",
+        "Multiple currency support with live exchange rates",
+        "Recurring transactions (daily, weekly, monthly, yearly)",
+        "CSV import and export",
+        "Open source"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Minty Flow",
+        "url": "https://github.com/minty-flow"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (enables Sitelinks Searchbox) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Minty Flow",
+      "url": "https://minty-flow.github.io/minty-flow-page/"
+    }
+    </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Minty Flow",
+      "url": "https://minty-flow.github.io/minty-flow-page/",
+      "sameAs": [
+        "https://github.com/minty-flow",
+        "https://play.google.com/store/apps/details?id=mn.gege.flow"
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+      // Restore path encoded by 404.html redirect.
+      ;(() => {
+        var p = new URLSearchParams(window.location.search).get('p')
+        if (p) {
+          window.history.replaceState(null, '', `/${p}`)
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
