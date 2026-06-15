@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://minty-flow.github.io/minty-flow-page/sitemap.xml
+Sitemap: https://minty-flow.github.io/sitemap.xml
