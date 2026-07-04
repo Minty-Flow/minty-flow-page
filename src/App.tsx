@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/contexts/theme";
@@ -19,6 +19,12 @@ function App() {
 							<Route path="/faq" element={<FAQ />} />
 							<Route path="/privacy" element={<PrivacyPolicy />} />
 							<Route path="/changelog" element={<Changelog />} />
+
+							{/* Legacy URL */}
+							<Route
+								path="/minty-flow-page"
+								element={<Navigate to="/" replace />}
+							/>
 						</Routes>
 					</div>
 					<Footer />
