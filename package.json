@@ -11,7 +11,7 @@
 		"lint:fix": "biome check --write",
 		"lint:fix-unsafe": "biome check --write --unsafe",
 		"preview": "vite preview",
-		"deploy": "pnpm build && cp dist/index.html dist/privacy.html && cp dist/index.html dist/faq.html && cp dist/index.html dist/changelog.html && gh-pages -d dist -b page-deployment"
+		"deploy": "pnpm build && node scripts/generate-route-pages.mjs && gh-pages -d dist -b page-deployment"
 	},
 	"dependencies": {
 		"@radix-ui/react-accordion": "^1.2.12",
