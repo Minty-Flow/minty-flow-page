@@ -217,7 +217,7 @@ export function FAQ() {
 				<div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-16">
 					{/* Section nav */}
 					<aside className="lg:sticky lg:top-24 lg:self-start">
-						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground/70">
+						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
 							Categories
 						</p>
 						<ul className="mt-4 flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">
@@ -239,7 +239,7 @@ export function FAQ() {
 											<span
 												className={cn(
 													"hidden text-xs tabular-nums lg:inline",
-													active ? "text-primary" : "text-muted-foreground/70",
+													active ? "text-primary" : "text-muted-foreground",
 												)}
 											>
 												{g.faqs.length}

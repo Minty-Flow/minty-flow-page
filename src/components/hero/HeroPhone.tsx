@@ -17,7 +17,7 @@ function PhoneMockup() {
 					{/* status bar */}
 					<div className="flex items-center justify-between text-[10px] font-medium text-muted-foreground">
 						<span>9:41</span>
-						<span className="inline-flex items-center gap-1 text-muted-foreground/60">
+						<span className="inline-flex items-center gap-1 text-muted-foreground">
 							<span className="inline-block size-1 rounded-full bg-current" />
 							<span className="inline-block size-1 rounded-full bg-current" />
 							<span className="inline-block size-1 rounded-full bg-current" />

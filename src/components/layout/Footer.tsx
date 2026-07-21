@@ -124,7 +124,7 @@ export function Footer() {
 
 					{groups.map((g) => (
 						<div key={g.title}>
-							<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground/70">
+							<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
 								{g.title}
 							</p>
 							<ul className="mt-4 flex flex-col gap-2.5">

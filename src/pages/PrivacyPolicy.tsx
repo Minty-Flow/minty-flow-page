@@ -157,7 +157,7 @@ export function PrivacyPolicy() {
 			<section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
 				<div className="grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-16">
 					<aside className="lg:sticky lg:top-24 lg:self-start">
-						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground/70">
+						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
 							On this page
 						</p>
 						<ul className="mt-4 flex flex-col gap-1">

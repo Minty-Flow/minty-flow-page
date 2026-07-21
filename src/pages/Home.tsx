@@ -96,7 +96,7 @@ export function Home() {
 			{/* TRUST STRIP */}
 			<section className="border-y border-border/60 bg-muted/30">
 				<div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-10 gap-y-3 px-4 py-5 text-xs text-muted-foreground sm:px-6">
-					<span className="font-medium uppercase tracking-wider text-muted-foreground/70">
+					<span className="font-medium uppercase tracking-wider text-muted-foreground">
 						Built on
 					</span>
 					<span className="inline-flex items-center gap-1.5">
@@ -156,7 +156,7 @@ export function Home() {
 					</p>
 					<h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
 						Everything you need.
-						<span className="text-muted-foreground/60">
+						<span className="text-muted-foreground">
 							{" "}
 							Nothing you don't.
 						</span>
@@ -292,7 +292,7 @@ export function Home() {
 									</span>
 									<div className="min-w-0 flex-1">
 										<div className="flex items-baseline gap-3">
-											<span className="font-mono text-xs text-muted-foreground/70">
+											<span className="font-mono text-xs text-muted-foreground">
 												{n}
 											</span>
 											<h3 className="font-display text-lg font-semibold">
