@@ -1,0 +1,20 @@
+# Minty Flow
+
+Minty Flow is a free, open-source, privacy-first expense tracker for Android. Works 100% offline with no account required. All data stays on your device.
+
+## Pages
+
+- [Home](https://minty-flow.github.io/)
+- [FAQ](https://minty-flow.github.io/faq)
+- [Privacy Policy](https://minty-flow.github.io/privacy)
+- [Changelog](https://minty-flow.github.io/changelog)
+- [Sitemap](https://minty-flow.github.io/sitemap.xml)
+
+## Source
+
+- [GitHub Organization](https://github.com/Minty-Flow)
+- [App Repository](https://github.com/Minty-Flow/minty-flow-app)
+
+## Download
+
+- [Google Play](https://play.google.com/store/apps/details?id=com.mintyflow.tracker)
