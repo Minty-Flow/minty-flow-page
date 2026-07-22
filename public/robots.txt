@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://minty-flow.github.io/sitemap.xml
+Sitemap: https://minty-flow.github.io/sitemap-index.xml
+
