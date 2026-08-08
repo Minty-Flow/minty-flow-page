@@ -3,7 +3,7 @@ export const APP = {
 	tagline: "Free, open-source expense tracker.",
 	siteUrl: "https://minty-flow.github.io",
 	contact: {
-		email: "adelefaell@gmail.com",
+		email: "adelefaell+mintyflowlanding@gmail.com",
 	},
 	links: {
 		googlePlay:
