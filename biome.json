@@ -6,7 +6,7 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"includes": ["**", "!!**/dist", "!dist", "!node_modules"]
+		"includes": ["**", "!!**/dist", "!dist", "!node_modules", "!.impeccable"]
 	},
 	"formatter": {
 		"enabled": true,

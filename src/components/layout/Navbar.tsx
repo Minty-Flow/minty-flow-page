@@ -53,6 +53,7 @@ export function Navbar() {
 									<li key={to}>
 										<Link
 											to={to}
+											aria-current={isActive ? "page" : undefined}
 											className={cn(
 												"relative inline-flex h-8 items-center rounded-full px-3.5 text-sm transition-colors",
 												isActive
@@ -73,7 +74,6 @@ export function Navbar() {
 							href={APP.links.githubRepo}
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="GitHub"
 							className="inline-flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
 						>
 							<svg

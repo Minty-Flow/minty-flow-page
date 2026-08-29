@@ -14,9 +14,10 @@ const sections: Section[] = [
 		title: "Introduction",
 		body: (
 			<p>
-				This Privacy Policy describes how Flow, a personal finance app developed
-				by Batmend Ganbaatar ("we", "us", or "our"), handles your information.
-				We built Flow with your privacy in mind — your data belongs to you.
+				This Privacy Policy describes how Minty Flow, a free and open-source
+				expense tracker for Android ("we", "us", or "our"), handles your
+				information. Minty Flow is built privacy-first — your data belongs to
+				you and stays on your device.
 			</p>
 		),
 	},
@@ -26,17 +27,17 @@ const sections: Section[] = [
 		body: (
 			<>
 				<p>
-					Flow does not collect, transmit, or store any personal information on
-					our servers. All your data — including preferences, settings, and
-					saved content — lives entirely on your device and is never accessible
-					to us.
+					Minty Flow does not collect, transmit, or store any personal
+					information on our servers. We have no servers and no accounts. All
+					your data — transactions, accounts, budgets, categories, and settings
+					— lives entirely on your device and is never accessible to us.
 				</p>
 				<p>
-					That said, the app does make secure HTTPS requests to external
-					services (for example, to fetch live exchange rates or load
-					contributor information). These requests may expose some technical
-					metadata — such as your device's IP address or request headers — to
-					those third-party services.
+					Minty Flow works fully offline. Some optional features make secure
+					HTTPS requests to external services — for example, fetching live
+					exchange rates for cross-currency transactions. When they do, the
+					third-party service may see technical metadata such as your device's
+					IP address or request headers. It never receives your financial data.
 				</p>
 			</>
 		),
@@ -47,8 +48,8 @@ const sections: Section[] = [
 		body: (
 			<p>
 				Since we don't collect any personal information, we have no personal
-				data to use for analytics, advertising, or any other purpose. Plain and
-				simple.
+				data to use for analytics, advertising, or any other purpose. There is
+				no tracking of any kind in Minty Flow.
 			</p>
 		),
 	},
@@ -64,20 +65,13 @@ const sections: Section[] = [
 				</p>
 				<p>
 					<span className="font-medium text-foreground">
-						Note for Apple users:
+						Note on device backups:
 					</span>{" "}
-					If you use Flow on macOS or iOS, your local app data may be included
-					in iCloud backups. We have no control over or access to iCloud data.
-					Please review{" "}
-					<a
-						href="https://www.apple.com/legal/privacy/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-foreground underline-offset-4 hover:underline"
-					>
-						Apple's Privacy Policy
-					</a>{" "}
-					for details.
+					Depending on your Android settings, the system may include Minty
+					Flow's local data in your device's backup to your Google account. That
+					backup is governed by Google's policies, not ours, and we have no
+					access to it. You can disable app backup in your Android settings, and
+					you can always export your own data as a CSV file from within the app.
 				</p>
 			</>
 		),
@@ -88,8 +82,10 @@ const sections: Section[] = [
 		body: (
 			<p>
 				We take reasonable precautions to help protect the information you store
-				within Flow. That said, no software can guarantee absolute security. You
-				are responsible for keeping your device secure and your data backed up.
+				within Minty Flow. That said, no software can guarantee absolute
+				security. You are responsible for keeping your device secure and your
+				data backed up — we recommend exporting a CSV backup regularly, since
+				everything is stored only on your device.
 			</p>
 		),
 	},
@@ -99,16 +95,17 @@ const sections: Section[] = [
 		body: (
 			<>
 				<p>
-					Flow does not integrate any advertising networks, social media SDKs,
-					or cross-app tracking tools.
+					Minty Flow does not integrate any advertising networks, analytics
+					SDKs, social media SDKs, or cross-app tracking tools of any kind.
 				</p>
 				<p>
-					To power certain features — like live currency exchange rates or
-					displaying project contributors — Flow sends HTTPS requests to
-					third-party APIs. These services may receive technical metadata such
-					as your IP address, OS type, or request headers. We don't control how
-					those services handle that data, so we encourage you to review their
-					respective privacy policies.
+					To power optional features such as live currency exchange rates, Minty
+					Flow sends HTTPS requests to third-party APIs. Those services may
+					receive technical metadata such as your IP address, OS version, or
+					request headers. We don't control how they handle that data, so we
+					encourage you to review their respective privacy policies. The source
+					code is public, so you can verify exactly which requests the app
+					makes.
 				</p>
 			</>
 		),
@@ -119,9 +116,9 @@ const sections: Section[] = [
 		body: (
 			<p>
 				We may revise this Privacy Policy occasionally. When we do, we'll update
-				the effective date at the top of this page. Continuing to use Flow after
-				any changes means you accept the updated policy. We recommend checking
-				back periodically.
+				the effective date at the top of this page. Continuing to use Minty Flow
+				after any changes means you accept the updated policy. We recommend
+				checking back periodically.
 			</p>
 		),
 	},
@@ -143,7 +140,7 @@ export function PrivacyPolicy() {
 				<div className="mx-auto max-w-2xl text-center">
 					<span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
 						<ShieldCheck className="size-3.5 text-primary" />
-						Legal · Effective May 17, 2025
+						Legal · Effective August 29, 2026
 					</span>
 					<h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
 						Privacy Policy
@@ -182,7 +179,7 @@ export function PrivacyPolicy() {
 						</ul>
 					</aside>
 
-					<article className="prose prose-neutral max-w-none">
+					<article className="max-w-none">
 						<div className="flex flex-col divide-y divide-border/60">
 							{sections.map((s) => (
 								<section
@@ -193,7 +190,7 @@ export function PrivacyPolicy() {
 									<h2 className="font-display text-2xl font-bold tracking-tight text-foreground">
 										{s.title}
 									</h2>
-									<div className="mt-4 flex flex-col gap-3 text-[15px] leading-relaxed text-muted-foreground">
+									<div className="mt-4 flex flex-col gap-3 text-base leading-relaxed text-muted-foreground">
 										{s.body}
 									</div>
 								</section>
@@ -203,7 +200,7 @@ export function PrivacyPolicy() {
 								<h2 className="font-display text-2xl font-bold tracking-tight text-foreground">
 									Contact
 								</h2>
-								<p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
+								<p className="mt-4 text-base leading-relaxed text-muted-foreground">
 									Questions or concerns? Reach out at{" "}
 									<a
 										href={`mailto:${APP.contact.email}`}

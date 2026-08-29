@@ -46,7 +46,7 @@ const steps = [
 	{
 		n: "01",
 		title: "Install",
-		text: "Grab it from Google Play or sideload the APK from GitHub.",
+		text: "Get it from Google Play, or download the APK straight from GitHub.",
 		icon: Download,
 	},
 	{
@@ -88,7 +88,7 @@ export function Home() {
 				<div className="absolute inset-0 -z-10 mesh-bg" />
 				<div className="absolute inset-0 -z-10 grid-bg" />
 
-				<div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 md:pt-24 lg:pb-28">
+				<div className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-16 md:pt-24 lg:pb-28">
 					<HeroPhone />
 				</div>
 			</section>
@@ -156,10 +156,7 @@ export function Home() {
 					</p>
 					<h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
 						Everything you need.
-						<span className="text-muted-foreground">
-							{" "}
-							Nothing you don't.
-						</span>
+						<span className="text-muted-foreground"> Nothing you don't.</span>
 					</h2>
 				</div>
 

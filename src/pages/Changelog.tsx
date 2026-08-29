@@ -9,7 +9,7 @@ import {
 	Wrench,
 	X,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { APP } from "@/constants/app";
 import { useSEO } from "@/hooks/useSEO";
 import { cn } from "@/lib/utils";
@@ -58,7 +58,7 @@ const TYPE_META: Record<
 	},
 	fixed: {
 		label: "Fixed",
-		pill: "bg-amber-500/10 text-amber-700 dark:text-amber-400 ring-amber-500/20",
+		pill: "bg-muted text-muted-foreground ring-border",
 		icon: Wrench,
 	},
 };
@@ -187,7 +187,7 @@ function ReleaseEntry({
 				</h2>
 				<span className="text-sm text-muted-foreground">{release.date}</span>
 				{latest && (
-					<span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-primary ring-1 ring-primary/20">
+					<span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium uppercase tracking-wider text-primary ring-1 ring-primary/20">
 						Latest
 					</span>
 				)}
@@ -237,7 +237,7 @@ function ReleaseEntry({
 							<li key={j.toString()} className="flex items-start gap-3 text-sm">
 								<span
 									className={cn(
-										"mt-0.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ring-1 shrink-0",
+										"mt-0.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium uppercase tracking-wider ring-1 shrink-0",
 										meta.pill,
 									)}
 								>
@@ -290,36 +290,34 @@ export function Changelog() {
 		};
 	}, []);
 
-	const typeCounts = useMemo(() => {
+	// React Compiler handles memoization; plain expressions are fine here.
+	const typeCounts = (() => {
 		if (!releases) return { new: 0, improved: 0, fixed: 0, all: 0 };
 		const counts = { new: 0, improved: 0, fixed: 0 };
 		for (const r of releases) {
 			for (const c of r.changes) counts[c.type]++;
 		}
 		return { ...counts, all: counts.new + counts.improved + counts.fixed };
-	}, [releases]);
+	})();
 
-	const filteredReleases = useMemo(() => {
-		if (!releases) return [];
-		return releases.filter((r) => {
-			if (
-				activeFilter !== "all" &&
-				!r.changes.some((c) => c.type === activeFilter)
-			)
-				return false;
-			if (query.trim()) {
-				const q = query.toLowerCase();
-				return (
-					r.title.toLowerCase().includes(q) ||
-					r.description.toLowerCase().includes(q) ||
-					r.changes.some((c) => c.text.toLowerCase().includes(q))
-				);
-			}
-			return true;
-		});
-	}, [releases, activeFilter, query]);
+	const filteredReleases = (releases ?? []).filter((r) => {
+		if (
+			activeFilter !== "all" &&
+			!r.changes.some((c) => c.type === activeFilter)
+		)
+			return false;
+		if (query.trim()) {
+			const q = query.toLowerCase();
+			return (
+				r.title.toLowerCase().includes(q) ||
+				r.description.toLowerCase().includes(q) ||
+				r.changes.some((c) => c.text.toLowerCase().includes(q))
+			);
+		}
+		return true;
+	});
 
-	const copyLink = useCallback((url: string, version: string) => {
+	function copyLink(url: string, version: string) {
 		navigator.clipboard
 			.writeText(url)
 			.then(() => {
@@ -330,7 +328,7 @@ export function Changelog() {
 				);
 			})
 			.catch(() => {});
-	}, []);
+	}
 
 	const filters: { key: FilterType; label: string; count: number }[] = [
 		{ key: "all", label: "All", count: typeCounts.all },
@@ -393,7 +391,7 @@ export function Changelog() {
 									className={cn(
 										"inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
 										active
-											? "bg-foreground text-background"
+											? "bg-primary/10 text-foreground ring-1 ring-primary/20"
 											: "text-muted-foreground hover:bg-muted hover:text-foreground",
 									)}
 								>
@@ -460,8 +458,17 @@ export function Changelog() {
 					{releases && filteredReleases.length === 0 && (
 						<div className="rounded-2xl border border-border/60 bg-card/60 py-16 text-center backdrop-blur">
 							<p className="text-sm text-muted-foreground">
-								No releases match{" "}
-								<span className="text-foreground">"{query}"</span>.
+								{query.trim() ? (
+									<>
+										No releases match{" "}
+										<span className="text-foreground">"{query}"</span>.
+									</>
+								) : (
+									<>
+										No <span className="text-foreground">{activeFilter}</span>{" "}
+										changes in any release yet.
+									</>
+								)}
 							</p>
 							<button
 								type="button"

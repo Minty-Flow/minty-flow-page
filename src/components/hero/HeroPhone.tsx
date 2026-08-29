@@ -11,7 +11,7 @@ const phoneRows = [
 
 function PhoneMockup() {
 	return (
-		<div className="relative mx-auto w-full max-w-[18rem]">
+		<div className="relative mx-auto w-full max-w-[15rem] sm:max-w-[18rem]">
 			<div className="rounded-[2.5rem] border border-border/70 bg-card/90 p-3 shadow-2xl backdrop-blur">
 				<div className="overflow-hidden rounded-[2rem] border border-border/50 bg-background/80 px-5 pb-5 pt-4">
 					{/* status bar */}
@@ -67,22 +67,22 @@ function PhoneMockup() {
 
 export function HeroPhone() {
 	return (
-		<div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+		<div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
 			<div className="animate-fade-up">
 				<StatusChip />
 
-				<h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+				<h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
 					Your money.
 					<br />
 					<span className="text-gradient">Your rules.</span>
 				</h1>
 
-				<p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+				<p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
 					A free, open-source expense tracker that keeps your data where it
 					belongs — on your device. No accounts. No ads. No compromises.
 				</p>
 
-				<div className="mt-9">
+				<div className="mt-7 sm:mt-9">
 					<PrimaryCTA />
 				</div>
 

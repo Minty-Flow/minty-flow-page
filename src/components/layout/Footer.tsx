@@ -100,7 +100,7 @@ export function Footer() {
 							</span>
 						</Link>
 						<p className="mt-4 max-w-xs text-sm text-muted-foreground">
-							{APP.tagline} Track your money. Keep your privacy.
+							{APP.tagline} Your money stays on your device.
 						</p>
 						<div className="mt-5 flex items-center gap-2">
 							<a

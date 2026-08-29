@@ -29,8 +29,14 @@ function App() {
 		<ThemeProvider>
 			<BrowserRouter basename={import.meta.env.BASE_URL}>
 				<div className="flex min-h-svh flex-col">
+					<a
+						href="#main"
+						className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:left-4 focus-visible:top-4 focus-visible:z-[100] focus-visible:rounded-full focus-visible:bg-primary focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm focus-visible:font-medium focus-visible:text-primary-foreground"
+					>
+						Skip to content
+					</a>
 					<Navbar />
-					<div className="flex-1">
+					<div id="main" tabIndex={-1} className="flex-1 outline-none">
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/faq" element={<FAQ />} />

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T00:00:00Z",
+  "title": "Design System: Minty Flow",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Mint Signal",
+        "canonical": "oklch(0.5 0.17 148)",
+        "tonalRamp": [
+          "oklch(0.18 0.06 148)",
+          "oklch(0.30 0.11 148)",
+          "oklch(0.40 0.15 148)",
+          "oklch(0.50 0.17 148)",
+          "oklch(0.62 0.16 148)",
+          "oklch(0.74 0.13 148)",
+          "oklch(0.86 0.09 148)",
+          "oklch(0.95 0.04 148)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Ink Text",
+        "canonical": "oklch(0.14 0.02 160)",
+        "tonalRamp": [
+          "oklch(0.13 0.012 160)",
+          "oklch(0.20 0.016 160)",
+          "oklch(0.30 0.018 160)",
+          "oklch(0.42 0.02 180)",
+          "oklch(0.55 0.02 190)",
+          "oklch(0.70 0.018 180)",
+          "oklch(0.85 0.012 160)",
+          "oklch(0.97 0.008 148)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(0.985 0.005 148)",
+        "tonalRamp": [
+          "oklch(0.13 0.012 160)",
+          "oklch(0.17 0.012 160)",
+          "oklch(0.24 0.018 160)",
+          "oklch(0.45 0.02 160)",
+          "oklch(0.70 0.02 150)",
+          "oklch(0.90 0.02 148)",
+          "oklch(0.95 0.015 148)",
+          "oklch(0.985 0.005 148)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "canonical": "oklch(0.48 0.02 200)",
+        "tonalRamp": [
+          "oklch(0.20 0.02 200)",
+          "oklch(0.30 0.02 200)",
+          "oklch(0.40 0.02 200)",
+          "oklch(0.48 0.02 200)",
+          "oklch(0.60 0.02 195)",
+          "oklch(0.70 0.02 185)",
+          "oklch(0.83 0.015 170)",
+          "oklch(0.94 0.01 150)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.9 0.02 148)",
+        "tonalRamp": [
+          "oklch(0.24 0.018 160)",
+          "oklch(0.34 0.02 155)",
+          "oklch(0.50 0.02 150)",
+          "oklch(0.66 0.02 148)",
+          "oklch(0.78 0.02 148)",
+          "oklch(0.86 0.02 148)",
+          "oklch(0.90 0.02 148)",
+          "oklch(0.95 0.012 148)"
+        ]
+      },
+      "destructive": {
+        "role": "tertiary",
+        "displayName": "Alert Red",
+        "canonical": "oklch(0.6 0.22 15)",
+        "tonalRamp": [
+          "oklch(0.22 0.09 15)",
+          "oklch(0.34 0.14 15)",
+          "oklch(0.46 0.19 15)",
+          "oklch(0.60 0.22 15)",
+          "oklch(0.70 0.19 15)",
+          "oklch(0.80 0.14 15)",
+          "oklch(0.89 0.08 15)",
+          "oklch(0.96 0.03 15)"
+        ]
+      },
+      "mesh-mint": {
+        "role": "primary",
+        "displayName": "Mesh Mint",
+        "canonical": "oklch(0.93 0.1 148)",
+        "tonalRamp": [
+          "oklch(0.22 0.08 148)",
+          "oklch(0.32 0.14 148)",
+          "oklch(0.50 0.14 148)",
+          "oklch(0.68 0.13 148)",
+          "oklch(0.82 0.12 148)",
+          "oklch(0.90 0.11 148)",
+          "oklch(0.93 0.10 148)",
+          "oklch(0.97 0.04 148)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 only, one per page. Plus Jakarta Sans 700, tracked -0.02em." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2 headings." },
+      "title": { "displayName": "Title", "purpose": "Card, tile, and list-item headings." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, Inter, ~1.6 line-height, 65-75ch measure." },
+      "label": { "displayName": "Label", "purpose": "Uppercase 0.18em eyebrows and caption labels; eyebrows primary-colored." }
+    },
+    "shadows": [
+      {
+        "name": "glow",
+        "value": "0 0 0 1px color-mix(in oklch, var(--primary) 18%, transparent), 0 8px 32px -10px color-mix(in oklch, var(--primary) 45%, transparent)",
+        "purpose": "The only brand shadow. Primary CTAs, key step/CTA icons, and hover lift on interactive cards. Signals 'act here'."
+      },
+      {
+        "name": "glass",
+        "value": "backdrop-filter: blur(10px) saturate(140%); background: color-mix(in oklch, var(--background) 88%, transparent); border-bottom: 1px solid var(--border)",
+        "purpose": "Sticky nav and a few floating chips. Depth by blur, not drop shadow."
+      },
+      {
+        "name": "phone-photo",
+        "value": "var(--tw-shadow, 0 25px 50px -12px rgb(0 0 0 / 0.25))",
+        "purpose": "Tailwind shadow-2xl on the hero phone mock only — treated as a product photograph exception."
+      }
+    ],
+    "motion": [
+      { "name": "fade-up", "value": "fade-up 0.6s ease-out both — from { opacity:0; translateY(12px) }", "purpose": "The only baseline entrance animation. Hero content. Disabled under prefers-reduced-motion." },
+      { "name": "transition-colors", "value": "~150ms ease", "purpose": "Default for button/link/nav hover. No transform on buttons." },
+      { "name": "card-lift", "value": "transform: translateY(-2px); transition-all", "purpose": "Interactive card hover only, paired with border-primary/40 + glow." },
+      { "name": "ping-dot", "value": "animate-ping on a 1.5px primary dot", "purpose": "Status chip 'live/open source' indicator." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single call to action — Google Play / 'Get the app'. Fully pill, mint fill, brand glow.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\"/><path d=\"M12 18h.01\"/></svg>Get it on Google Play</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 24px; border-radius:9999px; font-family:Inter,system-ui,sans-serif; font-size:14px; font-weight:600; text-decoration:none; background:oklch(0.5 0.17 148); color:oklch(0.985 0.005 148); box-shadow:0 0 0 1px color-mix(in oklch, oklch(0.5 0.17 148) 18%, transparent), 0 8px 32px -10px color-mix(in oklch, oklch(0.5 0.17 148) 45%, transparent); transition:background .15s ease; } .ds-btn-primary svg { width:16px; height:16px; } .ds-btn-primary:hover { background:color-mix(in oklch, oklch(0.5 0.17 148) 90%, transparent); } .ds-btn-primary:focus-visible { outline:2px solid oklch(0.5 0.17 148); outline-offset:2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action — 'Download APK', 'View the repo'. Hairline border, no fill, accent-tint on hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Download APK</a>",
+      "css": ".ds-btn-outline { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:44px; padding:0 24px; border-radius:9999px; font-family:Inter,system-ui,sans-serif; font-size:14px; font-weight:600; text-decoration:none; background:oklch(0.985 0.005 148); color:oklch(0.14 0.02 160); border:1px solid color-mix(in oklch, oklch(0.9 0.02 148) 70%, transparent); transition:background .15s ease, color .15s ease; } .ds-btn-outline:hover { background:oklch(0.94 0.09 148); color:oklch(0.3 0.14 148); } .ds-btn-outline:focus-visible { outline:2px solid oklch(0.5 0.17 148); outline-offset:2px; }"
+    },
+    {
+      "name": "Nav Link (pill group)",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop nav item inside a rounded-full hairline container. Active state is a 10% primary tint.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Home</a><a class=\"ds-nav-link\" href=\"#\">Changelog</a><a class=\"ds-nav-link\" href=\"#\">FAQ</a></nav>",
+      "css": ".ds-nav { display:inline-flex; align-items:center; gap:2px; padding:4px; border-radius:9999px; border:1px solid color-mix(in oklch, oklch(0.9 0.02 148) 60%, transparent); background:color-mix(in oklch, oklch(0.985 0.005 148) 40%, transparent); } .ds-nav-link { display:inline-flex; align-items:center; height:32px; padding:0 14px; border-radius:9999px; font-family:Inter,system-ui,sans-serif; font-size:14px; text-decoration:none; color:oklch(0.48 0.02 200); transition:color .15s ease, background .15s ease; } .ds-nav-link:hover { color:oklch(0.14 0.02 160); } .ds-nav-link--active { background:color-mix(in oklch, oklch(0.5 0.17 148) 10%, transparent); color:oklch(0.14 0.02 160); }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Bento / pillar tile. Flat at rest on a hairline border; interactive variant lifts with the brand glow on hover.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg></span><h3 class=\"ds-card-title\">Private by design</h3><p class=\"ds-card-body\">Data lives on your device. No accounts, no servers, no analytics.</p></div>",
+      "css": ".ds-card { border-radius:28px; border:1px solid color-mix(in oklch, oklch(0.9 0.02 148) 60%, transparent); background:color-mix(in oklch, oklch(1 0 0) 60%, transparent); padding:24px; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; } .ds-card:hover { transform:translateY(-2px); border-color:color-mix(in oklch, oklch(0.5 0.17 148) 40%, transparent); box-shadow:0 0 0 1px color-mix(in oklch, oklch(0.5 0.17 148) 18%, transparent), 0 8px 32px -10px color-mix(in oklch, oklch(0.5 0.17 148) 45%, transparent); } .ds-card-icon { display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; border-radius:12px; background:color-mix(in oklch, oklch(0.5 0.17 148) 10%, transparent); color:oklch(0.5 0.17 148); box-shadow:inset 0 0 0 1px color-mix(in oklch, oklch(0.5 0.17 148) 20%, transparent); } .ds-card-icon svg { width:20px; height:20px; } .ds-card-title { margin:20px 0 0; font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif; font-size:16px; font-weight:600; letter-spacing:-0.01em; color:oklch(0.14 0.02 160); } .ds-card-body { margin:8px 0 0; font-family:Inter,system-ui,sans-serif; font-size:14px; line-height:1.6; color:oklch(0.48 0.02 200); }"
+    },
+    {
+      "name": "Currency Chip",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Small pill token — currency codes, tags. Hairline border, translucent background, mono for codes.",
+      "html": "<span class=\"ds-chip\">USD</span>",
+      "css": ".ds-chip { display:inline-flex; align-items:center; padding:4px 12px; border-radius:9999px; border:1px solid color-mix(in oklch, oklch(0.9 0.02 148) 60%, transparent); background:color-mix(in oklch, oklch(0.985 0.005 148) 70%, transparent); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:oklch(0.14 0.02 160); }"
+    },
+    {
+      "name": "Section Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The uppercase 0.18em primary label that opens every major section, above the h2.",
+      "html": "<p class=\"ds-eyebrow\">Principles</p><h2 class=\"ds-eyebrow-h2\">Four ideas. No exceptions.</h2>",
+      "css": ".ds-eyebrow { margin:0; font-family:Inter,system-ui,sans-serif; font-size:12px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:oklch(0.5 0.17 148); } .ds-eyebrow-h2 { margin:12px 0 0; font-family:'Plus Jakarta Sans',Inter,system-ui,sans-serif; font-size:clamp(1.875rem,4vw,2.25rem); font-weight:700; letter-spacing:-0.02em; line-height:1.15; color:oklch(0.14 0.02 160); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Mint Glass",
+    "overview": "Minty Flow's site looks the way the app promises to feel: light, calm, and nothing hidden. Frosted translucent surfaces float over a soft mint field — a barely-there mesh wash, a faint 32px grid, scattered dot textures — so the page reads as air and glass rather than panels and chrome. Green is the single voice: one saturated mint primary that carries every call to action and almost nothing else. Everything around it is near-white, hairline-bordered, and quiet. The system is restrained on purpose. This is a privacy-first finance tool, so the visual language avoids anything that feels like it wants something from you: no loud gradients across headlines, no stacked shadows, no dense dashboards of fake data. Depth is earned, not decorative — surfaces sit flat at rest and the primary glow appears only where the user is meant to act. Typography does the structural work: a tight, tracked-in display face for headlines and eyebrows, Inter for everything readable, generous line height, lots of vertical breathing room. The result should feel like well-made, unhurried software — premium through precision, not ornament.",
+    "keyCharacteristics": [
+      "One-voice mint primary on a near-white (light) / near-black (dark) ground",
+      "Frosted glass for the sticky nav; soft radial mesh + grid + dot textures elsewhere",
+      "Flat surfaces at rest; a single primary 'glow' shadow reserved for intent",
+      "Large radii (cards 28px, controls fully pill) — soft geometry, hairline borders",
+      "Plus Jakarta Sans display / Inter body, headings tracked to -0.02em",
+      "Wide section rhythm (96–112px vertical), 72rem max content width",
+      "Full light/dark parity via OKLCH tokens; motion is one subtle fade-up, reduced-motion honored"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Mint primary is the only accent on the page and should cover well under 10% of any viewport. If a second accent hue shows up outside a chart or the phone-mock data, it's a bug.", "section": "colors" },
+      { "name": "The Tinted Neutral Rule", "body": "Neutrals are never pure gray — every background, border, and muted value carries hue 148–200 at very low chroma. Don't drop in a #71717a-style gray; use the tokens.", "section": "colors" },
+      { "name": "The One Gradient Rule", "body": "Exactly one text gradient exists — .text-gradient on a single hero word. Never apply gradient text to a second element, a whole heading, or body copy.", "section": "typography" },
+      { "name": "The Eyebrow Rule", "body": "Every major section opens with an uppercase 0.18em label, primary-colored, then the h2. Keep the pattern consistent; don't invent per-section variants.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. If something has a shadow, it is either interactive, the nav glass, or the phone photo — no exceptions. Never add ambient card shadows 'for polish'.", "section": "elevation" },
+      { "name": "The Glow-Means-Go Rule", "body": "shadow-glow is a call-to-action signal. Don't put it on decorative elements or non-primary buttons.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep mint primary as the single accent, under ~10% of any viewport (The One Voice Rule).",
+      "Do use the OKLCH tokens for every color, including neutrals — they carry a low-chroma mint/teal hue on purpose (The Tinted Neutral Rule).",
+      "Do open each section with an uppercase 0.18em primary eyebrow, then the h2 (The Eyebrow Rule).",
+      "Do keep surfaces flat; reserve shadow-glow for CTAs, key icons, and interactive-card hover (The Flat-By-Default / Glow-Means-Go Rules).",
+      "Do use fully pill buttons and 20–28px card radii; borders are 1px tinted-neutral at 40–70% opacity.",
+      "Do respect prefers-reduced-motion — the only baseline animation is a single 0.6s fade-up.",
+      "Do maintain full light/dark parity; every new color goes in both :root and .dark."
+    ],
+    "donts": [
+      "Don't add a second accent hue anywhere outside charts or the phone-mock data.",
+      "Don't apply gradient text to more than the one hero word (The One Gradient Rule).",
+      "Don't add ambient/decorative shadows to cards, or put shadow-glow on non-primary elements.",
+      "Don't use pure grays (#71717a, slate-*, zinc-*) — they clash with the tinted neutrals.",
+      "Don't stack more than two background utilities in one section, or let them sit above content.",
+      "Don't put real-looking financial figures in the phone mock as if they were live data; keep it schematic.",
+      "Don't introduce heavy/scale hover transforms on buttons — hover is transition-colors, cards lift at most -translate-y-0.5."
+    ]
+  }
+}

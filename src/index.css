@@ -184,6 +184,13 @@
 		font-family: var(--font-display);
 		letter-spacing: -0.02em;
 	}
+	/* Visible focus ring for bare links/buttons that don't opt into the
+	   Button component's own focus-visible treatment. */
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid var(--ring);
+		outline-offset: 2px;
+	}
 	::selection {
 		background: color-mix(in oklch, var(--primary) 30%, transparent);
 		color: var(--foreground);
@@ -274,7 +281,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.animate-fade-up {
+	/* Kill looping/decorative motion; leave state-change transitions
+	   (hover colours, accordion reveal) intact so feedback is preserved. */
+	.animate-fade-up,
+	.animate-ping,
+	.animate-pulse {
 		animation: none;
 	}
 	html {

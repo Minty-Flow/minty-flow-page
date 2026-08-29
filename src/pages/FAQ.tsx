@@ -1,5 +1,5 @@
 import { ArrowUpRight, HelpCircle, Mail, MessageCircle } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Accordion,
 	AccordionContent,
@@ -37,14 +37,14 @@ const groups: FAQGroup[] = [
 			{
 				q: "Where do I download Minty Flow?",
 				plain:
-					'Minty Flow is available on the App Store for iOS and on Google Play for Android. Search for "Minty Flow" or follow the download links on our home page.',
-				a: 'Minty Flow is available on the App Store for iOS and on Google Play for Android. Search for "Minty Flow" or follow the download links on our home page.',
+					"Minty Flow is on Google Play for Android. You can also download the APK directly from GitHub Releases. An iOS version is planned but not yet available.",
+				a: "Minty Flow is on Google Play for Android. You can also download the APK directly from GitHub Releases. An iOS version is planned but not yet available.",
 			},
 			{
 				q: "Is Minty Flow free?",
 				plain:
-					"Yes, Minty Flow is completely free with no premium tier, no ads, and no in-app purchases. If you find it valuable, you can support development via GitHub Sponsors or Buy Me a Coffee — but it is entirely optional.",
-				a: "Yes, Minty Flow is completely free with no premium tier, no ads, and no in-app purchases. If you find it valuable, you can support development via GitHub Sponsors or Buy Me a Coffee — but it is entirely optional.",
+					"Yes. Minty Flow is completely free — no premium tier, no ads, no in-app purchases, and no upsells. Every feature is available to everyone.",
+				a: "Yes. Minty Flow is completely free — no premium tier, no ads, no in-app purchases, and no upsells. Every feature is available to everyone.",
 			},
 			{
 				q: "Why is Minty Flow free and open source?",
@@ -73,8 +73,8 @@ const groups: FAQGroup[] = [
 			{
 				q: "How do I import from other apps?",
 				plain:
-					"Minty Flow supports CSV import. You can export your data from apps like Ivy or any app that exports to CSV, then reformat the file to match the Minty Flow CSV template (available in the app) and import it via Settings → Import.",
-				a: "Minty Flow supports CSV import. You can export your data from apps like Ivy or any app that exports to CSV, then reformat the file to match the Minty Flow CSV template (available in the app) and import it via Settings → Import.",
+					"Minty Flow supports CSV import. Export your data from your current app (any app that can export to CSV works), reformat the file to match the Minty Flow CSV template (available in the app), then import it via Settings → Import.",
+				a: "Minty Flow supports CSV import. Export your data from your current app (any app that can export to CSV works), reformat the file to match the Minty Flow CSV template (available in the app), then import it via Settings → Import.",
 			},
 			{
 				q: "Importing erased my data — how do I recover it?",
@@ -157,6 +157,8 @@ const groups: FAQGroup[] = [
 	},
 ];
 
+const TOTAL_FAQS = groups.reduce((sum, g) => sum + g.faqs.length, 0);
+
 export function FAQ() {
 	const [activeGroup, setActiveGroup] = useState(groups[0].id);
 
@@ -188,11 +190,6 @@ export function FAQ() {
 		};
 	}, []);
 
-	const totalFaqs = useMemo(
-		() => groups.reduce((sum, g) => sum + g.faqs.length, 0),
-		[],
-	);
-
 	return (
 		<main className="relative isolate overflow-hidden">
 			<div className="absolute inset-x-0 top-0 -z-10 h-120 spotlight-bg" />
@@ -201,7 +198,7 @@ export function FAQ() {
 				<div className="mx-auto max-w-2xl text-center">
 					<span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
 						<HelpCircle className="size-3.5 text-primary" />
-						Help center · {totalFaqs} answers
+						Help center · {TOTAL_FAQS} answers
 					</span>
 					<h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
 						How can we help?
@@ -238,7 +235,7 @@ export function FAQ() {
 											{g.title}
 											<span
 												className={cn(
-													"hidden text-xs tabular-nums lg:inline",
+													"text-xs tabular-nums",
 													active ? "text-primary" : "text-muted-foreground",
 												)}
 											>
