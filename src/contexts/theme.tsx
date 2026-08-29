@@ -12,9 +12,8 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 function getInitialTheme(): Theme {
 	const stored = localStorage.getItem("theme");
 	if (stored === "light" || stored === "dark") return stored;
-	return window.matchMedia("(prefers-color-scheme: dark)").matches
-		? "dark"
-		: "light";
+	// Minty Flow is a dark-first product; match the app unless asked otherwise.
+	return "dark";
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {

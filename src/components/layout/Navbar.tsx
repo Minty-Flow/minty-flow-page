@@ -55,9 +55,9 @@ export function Navbar() {
 											to={to}
 											aria-current={isActive ? "page" : undefined}
 											className={cn(
-												"relative inline-flex h-8 items-center rounded-full px-3.5 text-sm transition-colors",
+												"relative inline-flex h-8 items-center rounded-full px-3.5 text-sm font-medium transition-colors",
 												isActive
-													? "bg-primary/10 text-foreground"
+													? "bg-primary text-primary-foreground"
 													: "text-muted-foreground hover:text-foreground",
 											)}
 										>
@@ -105,11 +105,7 @@ export function Navbar() {
 							)}
 						</Button>
 
-						<Button
-							asChild
-							size="sm"
-							className="ml-2 rounded-full px-4 shadow-glow"
-						>
+						<Button asChild size="sm" className="ml-2 px-4">
 							<a
 								href={APP.links.googlePlay}
 								target="_blank"

@@ -1,57 +1,159 @@
-import { Building2, Car, Coffee, ShoppingBag } from "lucide-react";
+import {
+	ArrowDownLeft,
+	ArrowLeftRight,
+	ArrowUpRight,
+	Car,
+	CircleDot,
+	CreditCard,
+	EyeOff,
+	LayoutGrid,
+	LineChart,
+	Plus,
+	Search,
+	Settings,
+	User,
+	Wallet,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PrimaryCTA, StatusChip, TrustRow } from "./shared";
 
-const phoneRows = [
-	{ icon: ShoppingBag, amount: "-$42.10", positive: false },
-	{ icon: Coffee, amount: "-$5.75", positive: false },
-	{ icon: Building2, amount: "+$2,400", positive: true },
-	{ icon: Car, amount: "-$28.00", positive: false },
+const rows = [
+	{
+		icon: ArrowLeftRight,
+		title: "From Cash to Savings",
+		meta: "Cash → Savings · 11:34 PM",
+		amount: "$20",
+		tone: "neutral" as const,
+	},
+	{
+		icon: Car,
+		title: "Groceries",
+		meta: "Cash · 11:33 PM",
+		amount: "-$80",
+		tone: "negative" as const,
+	},
+	{
+		icon: CircleDot,
+		title: "Balance adjustment",
+		meta: "Cash · 11:33 PM",
+		amount: "$200",
+		tone: "positive" as const,
+	},
 ];
+
+function StatCard({
+	label,
+	amount,
+	tone,
+}: {
+	label: string;
+	amount: string;
+	tone: "positive" | "negative";
+}) {
+	const Icon = tone === "positive" ? ArrowDownLeft : ArrowUpRight;
+	return (
+		<div className="flex-1 rounded-2xl border border-border bg-card p-3.5">
+			<div className="flex items-center gap-2">
+				<span
+					className={cn(
+						"inline-flex size-6 items-center justify-center rounded-lg",
+						tone === "positive"
+							? "bg-primary/15 text-primary"
+							: "bg-negative/15 text-negative",
+					)}
+				>
+					<Icon className="size-3.5" />
+				</span>
+				<span className="eyebrow">{label}</span>
+			</div>
+			<div className="mt-3 flex items-end justify-between">
+				<span className="text-[0.6875rem] text-muted-foreground">USD</span>
+				<span
+					className={cn(
+						"font-display text-xl font-bold tabular",
+						tone === "positive" ? "text-primary" : "text-negative",
+					)}
+				>
+					{amount}
+				</span>
+			</div>
+			<div
+				className={cn(
+					"mt-2 h-1 w-10 rounded-full",
+					tone === "positive" ? "bg-primary" : "bg-negative",
+				)}
+			/>
+		</div>
+	);
+}
 
 function PhoneMockup() {
 	return (
-		<div className="relative mx-auto w-full max-w-[15rem] sm:max-w-[18rem]">
-			<div className="rounded-[2.5rem] border border-border/70 bg-card/90 p-3 shadow-2xl backdrop-blur">
-				<div className="overflow-hidden rounded-[2rem] border border-border/50 bg-background/80 px-5 pb-5 pt-4">
-					{/* status bar */}
-					<div className="flex items-center justify-between text-[10px] font-medium text-muted-foreground">
-						<span>9:41</span>
-						<span className="inline-flex items-center gap-1 text-muted-foreground">
-							<span className="inline-block size-1 rounded-full bg-current" />
-							<span className="inline-block size-1 rounded-full bg-current" />
-							<span className="inline-block size-1 rounded-full bg-current" />
-						</span>
+		<div className="relative mx-auto w-full max-w-[17rem] sm:max-w-[19rem]">
+			<div className="rounded-[2.75rem] border border-border bg-card p-2.5">
+				<div className="overflow-hidden rounded-[2.25rem] border border-border bg-background px-4 pb-4 pt-5">
+					{/* header */}
+					<div className="flex items-center justify-between">
+						<div className="flex items-center gap-2">
+							<User className="size-4 text-primary" />
+							<span className="font-display text-sm font-bold">
+								Hi, Minty flow!
+							</span>
+						</div>
+						<EyeOff className="size-4 text-primary" />
 					</div>
 
-					{/* balance card */}
-					<div className="mt-4 rounded-2xl border border-primary/25 bg-primary/10 p-4">
-						<div className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-							Total balance
-						</div>
-						<div className="mt-1 font-display text-2xl font-bold tabular-nums text-foreground">
-							$8,240.55
-						</div>
+					{/* filter chips */}
+					<div className="mt-4 flex gap-1.5 overflow-hidden">
+						{[
+							{ icon: Search, label: "Search" },
+							{ icon: LayoutGrid, label: "This month" },
+							{ icon: CreditCard, label: "Accounts" },
+						].map(({ icon: Icon, label }) => (
+							<span
+								key={label}
+								className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground"
+							>
+								<Icon className="size-3 text-primary" />
+								{label}
+							</span>
+						))}
 					</div>
+
+					{/* stat cards */}
+					<div className="mt-4 flex gap-2.5">
+						<StatCard label="Income" amount="$200" tone="positive" />
+						<StatCard label="Expense" amount="-$80" tone="negative" />
+					</div>
+
+					{/* today */}
+					<div className="mt-5 flex items-center gap-3">
+						<span className="font-display text-base font-bold">Today</span>
+						<span className="h-px flex-1 bg-border" />
+					</div>
+					<p className="mt-1 text-[0.6875rem] font-semibold text-muted-foreground">
+						<span className="text-primary">+$120</span> · 3 transactions
+					</p>
 
 					{/* transactions */}
-					<ul className="mt-4 flex flex-col gap-2.5">
-						{phoneRows.map(({ icon: Icon, amount, positive }, i) => (
-							<li
-								key={i.toString()}
-								className="flex items-center gap-3 rounded-xl border border-border/40 bg-background/60 p-2.5"
-							>
-								<span className="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
-									<Icon className="size-3.5" />
+					<ul className="mt-3 flex flex-col gap-3">
+						{rows.map(({ icon: Icon, title, meta, amount, tone }) => (
+							<li key={title} className="flex items-center gap-3">
+								<span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl bg-card text-primary">
+									<Icon className="size-4" />
 								</span>
-								<div className="flex-1 space-y-1">
-									<div className="h-1.5 w-3/4 rounded-full bg-muted" />
-									<div className="h-1.5 w-1/2 rounded-full bg-muted/60" />
+								<div className="min-w-0 flex-1">
+									<div className="truncate text-xs font-semibold">{title}</div>
+									<div className="truncate text-[0.625rem] text-muted-foreground">
+										{meta}
+									</div>
 								</div>
 								<span
 									className={cn(
-										"font-mono text-xs font-semibold tabular-nums",
-										positive ? "text-primary" : "text-rose-500/90",
+										"shrink-0 text-xs font-bold tabular",
+										tone === "positive" && "text-primary",
+										tone === "negative" && "text-negative",
+										tone === "neutral" && "text-foreground",
 									)}
 								>
 									{amount}
@@ -59,6 +161,17 @@ function PhoneMockup() {
 							</li>
 						))}
 					</ul>
+
+					{/* bottom nav */}
+					<div className="mt-5 flex items-center justify-around rounded-2xl border border-border bg-card px-2 py-2">
+						<CircleDot className="size-4 text-primary" />
+						<LineChart className="size-4 text-muted-foreground" />
+						<span className="inline-flex size-9 -translate-y-3 items-center justify-center rounded-2xl bg-primary text-primary-foreground mint-glow">
+							<Plus className="size-4" />
+						</span>
+						<Wallet className="size-4 text-muted-foreground" />
+						<Settings className="size-4 text-muted-foreground" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -67,14 +180,14 @@ function PhoneMockup() {
 
 export function HeroPhone() {
 	return (
-		<div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+		<div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
 			<div className="animate-fade-up">
 				<StatusChip />
 
-				<h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+				<h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
 					Your money.
 					<br />
-					<span className="text-gradient">Your rules.</span>
+					<span className="text-primary">Your rules.</span>
 				</h1>
 
 				<p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
