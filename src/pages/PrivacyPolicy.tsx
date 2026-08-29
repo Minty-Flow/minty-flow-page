@@ -154,7 +154,7 @@ export function PrivacyPolicy() {
 								<li key={s.id}>
 									<a
 										href={`#${s.id}`}
-										className="block rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+										className="block rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
 									>
 										{s.title}
 									</a>
@@ -163,7 +163,7 @@ export function PrivacyPolicy() {
 							<li>
 								<a
 									href="#contact"
-									className="block rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+									className="block rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
 								>
 									Contact
 								</a>
