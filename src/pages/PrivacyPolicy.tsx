@@ -1,4 +1,3 @@
-import { ShieldCheck } from "lucide-react";
 import { APP } from "@/constants/app";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -133,28 +132,21 @@ export function PrivacyPolicy() {
 	});
 
 	return (
-		<main className="relative isolate overflow-hidden">
-			<div className="absolute inset-x-0 top-0 -z-10 h-105 spotlight-bg" />
-
-			<section className="mx-auto max-w-5xl px-4 pt-16 sm:px-6 md:pt-20">
-				<div className="mx-auto max-w-2xl text-center">
-					<span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-						<ShieldCheck className="size-3.5 text-primary" />
-						Legal · Effective August 29, 2026
-					</span>
-					<h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-						Privacy Policy
-					</h1>
-					<p className="mt-4 text-muted-foreground">
-						Short version: we don't collect your data. Long version below.
-					</p>
-				</div>
+		<main className="mx-auto max-w-5xl px-5 sm:px-6">
+			<section className="max-w-2xl pt-14 md:pt-20">
+				<h1 className="font-display text-4xl font-extrabold tracking-[-0.035em] text-foreground md:text-5xl">
+					Privacy Policy
+				</h1>
+				<p className="mt-4 text-muted-foreground">
+					The short version: we don&rsquo;t collect your data. Effective
+					August&nbsp;29,&nbsp;2026.
+				</p>
 			</section>
 
-			<section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
-				<div className="grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-16">
+			<section className="py-14 md:py-20">
+				<div className="grid gap-12 lg:grid-cols-[200px_1fr] lg:gap-16">
 					<aside className="lg:sticky lg:top-24 lg:self-start">
-						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+						<p className="text-[0.8125rem] font-semibold text-foreground">
 							On this page
 						</p>
 						<ul className="mt-4 flex flex-col gap-1">

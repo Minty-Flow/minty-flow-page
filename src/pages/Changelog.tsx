@@ -338,25 +338,17 @@ export function Changelog() {
 	];
 
 	return (
-		<main className="relative isolate overflow-hidden">
-			<div className="absolute inset-x-0 top-0 -z-10 h-105 spotlight-bg" />
-
-			<section className="mx-auto max-w-4xl px-4 pt-16 sm:px-6 md:pt-20">
-				<div className="mx-auto max-w-2xl text-center">
-					<span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-						<GitCommit className="size-3.5 text-primary" />
-						Release notes
-					</span>
-					<h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-						What's new
-					</h1>
-					<p className="mt-4 text-muted-foreground">
-						Every release, every change. Newest first.
-					</p>
-				</div>
+		<main className="mx-auto max-w-4xl px-5 sm:px-6">
+			<section className="max-w-2xl pt-14 md:pt-20">
+				<h1 className="font-display text-4xl font-extrabold tracking-[-0.035em] text-foreground md:text-5xl">
+					What&rsquo;s new
+				</h1>
+				<p className="mt-4 text-muted-foreground">
+					Every release, pulled straight from GitHub. Newest first.
+				</p>
 			</section>
 
-			<section className="mx-auto max-w-4xl px-4 pb-24 pt-12 sm:px-6">
+			<section className="pb-24 pt-10">
 				{/* Controls */}
 				<div className="sticky top-20 z-10 -mx-2 mb-10 flex flex-col gap-3 rounded-2xl border border-border/60 bg-background/80 p-2 backdrop-blur sm:mx-0 sm:flex-row sm:items-center sm:justify-between sm:p-3">
 					<div className="relative w-full sm:max-w-xs">

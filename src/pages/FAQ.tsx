@@ -1,4 +1,4 @@
-import { ArrowUpRight, HelpCircle, Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
 	Accordion,
@@ -191,30 +191,22 @@ export function FAQ() {
 	}, []);
 
 	return (
-		<main className="relative isolate overflow-hidden">
-			<div className="absolute inset-x-0 top-0 -z-10 h-120 spotlight-bg" />
-
-			<section className="mx-auto max-w-5xl px-4 pt-16 sm:px-6 md:pt-20">
-				<div className="mx-auto max-w-2xl text-center">
-					<span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-						<HelpCircle className="size-3.5 text-primary" />
-						Help center · {TOTAL_FAQS} answers
-					</span>
-					<h1 className="mt-6 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-						How can we help?
-					</h1>
-					<p className="mt-4 text-muted-foreground">
-						Everything you need to know about Minty Flow — privacy, features,
-						import/export, and more.
-					</p>
-				</div>
+		<main className="mx-auto max-w-5xl px-5 sm:px-6">
+			<section className="max-w-2xl pt-14 md:pt-20">
+				<h1 className="font-display text-4xl font-extrabold tracking-[-0.035em] text-foreground md:text-5xl">
+					Questions &amp; answers
+				</h1>
+				<p className="mt-4 text-muted-foreground">
+					{TOTAL_FAQS} answers on how Minty Flow works — privacy, features,
+					import and export.
+				</p>
 			</section>
 
-			<section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
-				<div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-16">
+			<section className="py-14 md:py-20">
+				<div className="grid gap-10 lg:grid-cols-[200px_1fr] lg:gap-16">
 					{/* Section nav */}
 					<aside className="lg:sticky lg:top-24 lg:self-start">
-						<p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+						<p className="text-[0.8125rem] font-semibold text-foreground">
 							Categories
 						</p>
 						<ul className="mt-4 flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">
@@ -284,31 +276,22 @@ export function FAQ() {
 				</div>
 			</section>
 
-			<section className="mx-auto max-w-5xl px-4 pb-24 sm:px-6 md:pb-28">
-				<div className="relative overflow-hidden rounded-3xl border border-border/60 bg-card p-8 sm:p-10">
-					<div className="absolute inset-0 -z-10 dot-bg opacity-40" />
-					<div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-						<div className="flex items-start gap-4">
-							<span className="inline-flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20">
-								<MessageCircle className="size-5" />
-							</span>
-							<div>
-								<h3 className="font-display text-xl font-bold tracking-tight">
-									Still stuck?
-								</h3>
-								<p className="mt-1.5 text-sm text-muted-foreground">
-									Email the maintainer directly — every message gets read.
-								</p>
-							</div>
-						</div>
-						<Button asChild size="lg" className="rounded-full px-6">
-							<a href={`mailto:${APP.contact.email}`}>
-								<Mail className="size-4" />
-								Email support
-								<ArrowUpRight className="size-3.5" />
-							</a>
-						</Button>
+			<section className="border-t border-border py-16 md:py-20">
+				<div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+					<div>
+						<h2 className="font-display text-xl font-bold tracking-[-0.02em]">
+							Still stuck?
+						</h2>
+						<p className="mt-1.5 text-[0.9375rem] text-muted-foreground">
+							Email the maintainer directly — every message gets read.
+						</p>
 					</div>
+					<Button asChild variant="outline" size="lg">
+						<a href={`mailto:${APP.contact.email}`}>
+							<Mail className="size-4" />
+							Email support
+						</a>
+					</Button>
 				</div>
 			</section>
 		</main>

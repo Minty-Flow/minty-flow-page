@@ -2,7 +2,6 @@ import {
 	ArrowDownLeft,
 	ArrowLeftRight,
 	ArrowUpRight,
-	Car,
 	CircleDot,
 	CreditCard,
 	EyeOff,
@@ -11,11 +10,12 @@ import {
 	Plus,
 	Search,
 	Settings,
+	ShoppingBasket,
 	User,
 	Wallet,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PrimaryCTA, StatusChip, TrustRow } from "./shared";
+import { PrimaryCTA, TrustRow } from "./shared";
 
 const rows = [
 	{
@@ -26,7 +26,7 @@ const rows = [
 		tone: "neutral" as const,
 	},
 	{
-		icon: Car,
+		icon: ShoppingBasket,
 		title: "Groceries",
 		meta: "Cash · 11:33 PM",
 		amount: "-$80",
@@ -180,22 +180,20 @@ function PhoneMockup() {
 
 export function HeroPhone() {
 	return (
-		<div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+		<div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
 			<div className="animate-fade-up">
-				<StatusChip />
-
-				<h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground sm:mt-6 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+				<h1 className="font-display text-[2.75rem] font-extrabold leading-[1.04] tracking-[-0.035em] text-foreground sm:text-5xl md:text-6xl lg:text-[4rem]">
 					Your money.
 					<br />
 					<span className="text-primary">Your rules.</span>
 				</h1>
 
-				<p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
-					A free, open-source expense tracker that keeps your data where it
-					belongs — on your device. No accounts. No ads. No compromises.
+				<p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-muted-foreground sm:mt-6">
+					A free, open-source expense tracker for Android. Every entry stays on
+					your device — no account, no servers, no ads.
 				</p>
 
-				<div className="mt-7 sm:mt-9">
+				<div className="mt-8">
 					<PrimaryCTA />
 				</div>
 

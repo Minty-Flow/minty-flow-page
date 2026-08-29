@@ -1,56 +1,42 @@
-import { Lock, ShieldCheck, Smartphone, WifiOff } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { Button } from "@/components/ui/button";
 import { APP } from "@/constants/app";
 import { cn } from "@/lib/utils";
 
 export const trustRow = [
-	{ icon: ShieldCheck, label: "No account" },
-	{ icon: WifiOff, label: "Works offline" },
-	{ icon: Lock, label: "Local-only data" },
-	{ icon: GithubIcon, label: "GPL-3.0 licensed" },
+	"No account",
+	"Works offline",
+	"Local-only data",
+	"GPL-3.0",
 ];
 
-export function PrimaryCTA() {
+export function PrimaryCTA({ align = "left" }: { align?: "left" | "center" }) {
 	return (
-		<div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-			<Button asChild size="lg" className="rounded-full px-6 shadow-glow">
+		<div
+			className={cn(
+				"flex flex-col items-stretch gap-3 sm:flex-row sm:items-center",
+				align === "center" && "sm:justify-center",
+			)}
+		>
+			<Button asChild size="lg">
 				<a
 					href={APP.links.googlePlay}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<Smartphone className="size-4" />
 					Get it on Google Play
 				</a>
 			</Button>
-			<Button
-				asChild
-				variant="outline"
-				size="lg"
-				className="rounded-full border-border/70 bg-background/60 px-6 backdrop-blur"
-			>
+			<Button asChild variant="outline" size="lg">
 				<a
 					href={APP.links.githubReleases}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<GithubIcon className="size-4" />
-					Download APK
+					Download the APK
 				</a>
 			</Button>
-		</div>
-	);
-}
-
-export function StatusChip() {
-	return (
-		<div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-			<span className="relative flex size-1.5">
-				<span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-70" />
-				<span className="relative inline-flex size-1.5 rounded-full bg-primary" />
-			</span>
-			Open source · 100% free · Privacy first
 		</div>
 	);
 }
@@ -59,16 +45,15 @@ export function TrustRow({ centered = false }: { centered?: boolean }) {
 	return (
 		<ul
 			className={cn(
-				"mt-8 flex flex-wrap items-center gap-x-5 gap-y-2",
+				"mt-8 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[0.8125rem] text-muted-foreground",
 				centered && "justify-center",
 			)}
 		>
-			{trustRow.map(({ icon: Icon, label }) => (
-				<li
-					key={label}
-					className="inline-flex items-center gap-1.5 text-xs text-muted-foreground"
-				>
-					<Icon className="size-3.5 text-primary/80" />
+			{trustRow.map((label, i) => (
+				<li key={label} className="flex items-center gap-2.5">
+					{i > 0 && (
+						<span aria-hidden className="size-1 rounded-full bg-border" />
+					)}
 					{label}
 				</li>
 			))}
