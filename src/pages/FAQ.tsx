@@ -218,17 +218,19 @@ export function FAQ() {
 											href={`#${g.id}`}
 											onClick={() => setActiveGroup(g.id)}
 											className={cn(
-												"inline-flex w-full items-center justify-between gap-3 whitespace-nowrap rounded-full border px-4 py-1.5 text-sm transition-all lg:rounded-lg lg:py-2",
+												"inline-flex w-full items-center justify-between gap-3 whitespace-nowrap rounded-full border px-4 py-1.5 text-sm transition-colors duration-150 lg:rounded-[0.85rem] lg:py-2",
 												active
-													? "border-primary/30 bg-primary/10 text-foreground"
-													: "border-transparent text-muted-foreground hover:bg-muted hover:text-foreground",
+													? "border-transparent bg-primary font-medium text-primary-foreground"
+													: "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
 											)}
 										>
 											{g.title}
 											<span
 												className={cn(
 													"text-xs tabular-nums",
-													active ? "text-primary" : "text-muted-foreground",
+													active
+														? "text-primary-foreground/70"
+														: "text-muted-foreground",
 												)}
 											>
 												{g.faqs.length}

@@ -1,4 +1,10 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import {
+	BrowserRouter,
+	Link,
+	Route,
+	Routes,
+	useLocation,
+} from "react-router-dom";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/contexts/theme";
@@ -24,6 +30,23 @@ function NotFound() {
 	);
 }
 
+function RoutedMain() {
+	const { pathname } = useLocation();
+	return (
+		<div id="main" tabIndex={-1} className="flex-1 outline-none">
+			<div key={pathname} className="animate-fade-in">
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/faq" element={<FAQ />} />
+					<Route path="/privacy" element={<PrivacyPolicy />} />
+					<Route path="/changelog" element={<Changelog />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</div>
+		</div>
+	);
+}
+
 function App() {
 	return (
 		<ThemeProvider>
@@ -36,15 +59,7 @@ function App() {
 						Skip to content
 					</a>
 					<Navbar />
-					<div id="main" tabIndex={-1} className="flex-1 outline-none">
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="/faq" element={<FAQ />} />
-							<Route path="/privacy" element={<PrivacyPolicy />} />
-							<Route path="/changelog" element={<Changelog />} />
-							<Route path="*" element={<NotFound />} />
-						</Routes>
-					</div>
+					<RoutedMain />
 					<Footer />
 				</div>
 			</BrowserRouter>

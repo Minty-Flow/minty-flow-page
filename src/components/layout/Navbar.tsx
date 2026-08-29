@@ -46,7 +46,7 @@ export function Navbar() {
 					</Link>
 
 					<div className="hidden items-center gap-1 md:flex">
-						<ul className="flex items-center gap-0.5 rounded-full border border-border/60 bg-background/40 p-1">
+						<ul className="flex items-center gap-0.5 rounded-full border border-border bg-card/70 p-1">
 							{links.map(({ to, label }) => {
 								const isActive = pathname === to;
 								return (
@@ -55,10 +55,10 @@ export function Navbar() {
 											to={to}
 											aria-current={isActive ? "page" : undefined}
 											className={cn(
-												"relative inline-flex h-8 items-center rounded-full px-3.5 text-sm font-medium transition-colors",
+												"relative inline-flex h-8 items-center rounded-full px-3.5 text-sm font-medium transition-colors duration-150",
 												isActive
 													? "bg-primary text-primary-foreground"
-													: "text-muted-foreground hover:text-foreground",
+													: "text-muted-foreground hover:bg-surface hover:text-foreground",
 											)}
 										>
 											{label}

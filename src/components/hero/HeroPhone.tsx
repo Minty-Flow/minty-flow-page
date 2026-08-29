@@ -56,9 +56,9 @@ function StatCard({
 			<div className="flex items-center gap-2">
 				<span
 					className={cn(
-						"inline-flex size-6 items-center justify-center rounded-lg",
+						"inline-flex size-6 items-center justify-center rounded-[0.65rem]",
 						tone === "positive"
-							? "bg-primary/15 text-primary"
+							? "bg-positive/15 text-positive"
 							: "bg-negative/15 text-negative",
 					)}
 				>
@@ -71,7 +71,7 @@ function StatCard({
 				<span
 					className={cn(
 						"font-display text-xl font-bold tabular",
-						tone === "positive" ? "text-primary" : "text-negative",
+						tone === "positive" ? "text-positive" : "text-negative",
 					)}
 				>
 					{amount}
@@ -80,7 +80,7 @@ function StatCard({
 			<div
 				className={cn(
 					"mt-2 h-1 w-10 rounded-full",
-					tone === "positive" ? "bg-primary" : "bg-negative",
+					tone === "positive" ? "bg-positive" : "bg-negative",
 				)}
 			/>
 		</div>
@@ -112,7 +112,7 @@ function PhoneMockup() {
 						].map(({ icon: Icon, label }) => (
 							<span
 								key={label}
-								className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground"
+								className="inline-flex shrink-0 items-center gap-1.5 rounded-[0.85rem] border border-border px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground"
 							>
 								<Icon className="size-3 text-primary" />
 								{label}
@@ -132,14 +132,14 @@ function PhoneMockup() {
 						<span className="h-px flex-1 bg-border" />
 					</div>
 					<p className="mt-1 text-[0.6875rem] font-semibold text-muted-foreground">
-						<span className="text-primary">+$120</span> · 3 transactions
+						<span className="text-positive">+$120</span> · 3 transactions
 					</p>
 
 					{/* transactions */}
 					<ul className="mt-3 flex flex-col gap-3">
 						{rows.map(({ icon: Icon, title, meta, amount, tone }) => (
 							<li key={title} className="flex items-center gap-3">
-								<span className="inline-flex size-9 shrink-0 items-center justify-center rounded-xl bg-card text-primary">
+								<span className="inline-flex size-9 shrink-0 items-center justify-center rounded-[0.9rem] bg-surface text-primary">
 									<Icon className="size-4" />
 								</span>
 								<div className="min-w-0 flex-1">
@@ -151,7 +151,7 @@ function PhoneMockup() {
 								<span
 									className={cn(
 										"shrink-0 text-xs font-bold tabular",
-										tone === "positive" && "text-primary",
+										tone === "positive" && "text-positive",
 										tone === "negative" && "text-negative",
 										tone === "neutral" && "text-foreground",
 									)}
@@ -163,10 +163,12 @@ function PhoneMockup() {
 					</ul>
 
 					{/* bottom nav */}
-					<div className="mt-5 flex items-center justify-around rounded-2xl border border-border bg-card px-2 py-2">
-						<CircleDot className="size-4 text-primary" />
+					<div className="mt-5 flex items-center justify-around rounded-[1.5rem] border border-border bg-background px-2 py-2">
+						<span className="inline-flex size-7 items-center justify-center rounded-full bg-primary text-primary-foreground">
+							<CircleDot className="size-3.5" />
+						</span>
 						<LineChart className="size-4 text-muted-foreground" />
-						<span className="inline-flex size-9 -translate-y-3 items-center justify-center rounded-2xl bg-primary text-primary-foreground mint-glow">
+						<span className="inline-flex size-9 -translate-y-3 items-center justify-center rounded-[1rem] bg-primary text-primary-foreground mint-glow">
 							<Plus className="size-4" />
 						</span>
 						<Wallet className="size-4 text-muted-foreground" />
@@ -181,27 +183,31 @@ function PhoneMockup() {
 export function HeroPhone() {
 	return (
 		<div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-			<div className="animate-fade-up">
-				<h1 className="font-display text-[2.75rem] font-extrabold leading-[1.04] tracking-[-0.035em] text-foreground sm:text-5xl md:text-6xl lg:text-[4rem]">
+			<div>
+				<h1 className="animate-fade-up font-display text-[2.75rem] font-extrabold leading-[1.04] tracking-[-0.035em] text-foreground sm:text-5xl md:text-6xl lg:text-[4rem]">
 					Your money.
 					<br />
 					<span className="text-primary">Your rules.</span>
 				</h1>
 
-				<p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-muted-foreground sm:mt-6">
+				<p className="animate-fade-up mt-5 max-w-md text-[1.0625rem] leading-relaxed text-muted-foreground [animation-delay:80ms] sm:mt-6">
 					A free, open-source expense tracker for Android. Every entry stays on
 					your device — no account, no servers, no ads.
 				</p>
 
-				<div className="mt-8">
+				<div className="animate-fade-up mt-8 [animation-delay:160ms]">
 					<PrimaryCTA />
 				</div>
 
-				<TrustRow />
+				<div className="animate-fade-up [animation-delay:240ms]">
+					<TrustRow />
+				</div>
 			</div>
 
-			<div className="flex justify-center">
-				<PhoneMockup />
+			<div className="flex animate-fade-up justify-center [animation-delay:120ms]">
+				<div className="animate-float">
+					<PhoneMockup />
+				</div>
 			</div>
 		</div>
 	);

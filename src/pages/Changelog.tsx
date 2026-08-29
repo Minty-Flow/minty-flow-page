@@ -39,8 +39,25 @@ interface GitHubRelease {
 	html_url: string;
 }
 
+// Static file generated at deploy time (scripts/generate-releases.mjs). The
+// live API is only a fallback — visitors behind shared IPs get 403s from it.
+const RELEASES_STATIC = `${import.meta.env.BASE_URL}releases.json`;
 const RELEASES_API =
 	"https://api.github.com/repos/Minty-Flow/minty-flow-app/releases";
+
+async function fetchReleases(): Promise<GitHubRelease[]> {
+	try {
+		const res = await fetch(RELEASES_STATIC);
+		if (res.ok) return (await res.json()) as GitHubRelease[];
+	} catch {
+		// fall through to the live API
+	}
+	const res = await fetch(RELEASES_API, {
+		headers: { Accept: "application/vnd.github+json" },
+	});
+	if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
+	return (await res.json()) as GitHubRelease[];
+}
 
 const TYPE_META: Record<
 	ChangeType,
@@ -187,7 +204,7 @@ function ReleaseEntry({
 				</h2>
 				<span className="text-sm text-muted-foreground">{release.date}</span>
 				{latest && (
-					<span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium uppercase tracking-wider text-primary ring-1 ring-primary/20">
+					<span className="rounded-full bg-primary px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
 						Latest
 					</span>
 				)}
@@ -272,11 +289,7 @@ export function Changelog() {
 
 	useEffect(() => {
 		let cancelled = false;
-		fetch(RELEASES_API, { headers: { Accept: "application/vnd.github+json" } })
-			.then((res) => {
-				if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
-				return res.json() as Promise<GitHubRelease[]>;
-			})
+		fetchReleases()
 			.then((data) => {
 				if (cancelled) return;
 				setReleases(data.map(toRelease));
@@ -350,7 +363,7 @@ export function Changelog() {
 
 			<section className="pb-24 pt-10">
 				{/* Controls */}
-				<div className="sticky top-20 z-10 -mx-2 mb-10 flex flex-col gap-3 rounded-2xl border border-border/60 bg-background/80 p-2 backdrop-blur sm:mx-0 sm:flex-row sm:items-center sm:justify-between sm:p-3">
+				<div className="sticky top-20 z-10 -mx-2 mb-10 flex flex-col gap-3 rounded-[1.125rem] border border-border bg-card/85 p-2 backdrop-blur sm:mx-0 sm:flex-row sm:items-center sm:justify-between sm:p-3">
 					<div className="relative w-full sm:max-w-xs">
 						<Search className="pointer-events-none absolute left-3 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground" />
 						<input
@@ -358,7 +371,7 @@ export function Changelog() {
 							placeholder="Search changes"
 							value={query}
 							onChange={(e) => setQuery(e.target.value)}
-							className="w-full rounded-full border border-border/60 bg-background py-1.5 pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/20"
+							className="w-full rounded-[0.85rem] border border-border bg-background py-2 pl-9 pr-8 text-sm text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/25"
 						/>
 						{query && (
 							<button
@@ -381,10 +394,10 @@ export function Changelog() {
 									key={key}
 									onClick={() => setActiveFilter(key)}
 									className={cn(
-										"inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
+										"inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-150",
 										active
-											? "bg-primary/10 text-foreground ring-1 ring-primary/20"
-											: "text-muted-foreground hover:bg-muted hover:text-foreground",
+											? "bg-primary text-primary-foreground"
+											: "text-muted-foreground hover:bg-surface hover:text-foreground",
 									)}
 								>
 									{label}
